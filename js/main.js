@@ -15,10 +15,13 @@ traductor();
 
 document.getElementById('traduce').onclick = function mostrar(){
     var imp=document.getElementById('print');
-    imp.innerHTML="<h4>Datos de formulario</h4>"+
+    if(email.value.length==0 || pswd.value.length==0){
+      alert("Ingrese sus datos");
+    }else{
+      imp.innerHTML="<h4>Datos de formulario</h4>"+
                     "El correo electrónico ingresado es: "+email.value+
                     "<br>La clave ingresada es: "+pswd.value;
-
+    }
 }
 
 document.getElementById('form').onsubmit=function(e){
